@@ -16,16 +16,17 @@ use App\Http\Controllers\BlogController;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
 
-Route::get('/blog',[BlogController::class, 'index'])->name('blog_posts');
+Route::get('/',[BlogController::class, 'index'])->name('blog_posts');
+Route::get('/{slug}', [BlogController::class, 'show'])->name('blog_post');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');

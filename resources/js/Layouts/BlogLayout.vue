@@ -46,7 +46,7 @@
             <div class="block sm:hidden">
                 <a
                     href="#"
-                    class="block md:hidden text-base font-bold uppercase text-center flex justify-center items-center"
+                    class="md:hidden text-base font-bold uppercase text-center flex justify-center items-center"
                 >
                     Topics <i class="fas ml-2"></i>
                 </a>
