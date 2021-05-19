@@ -14,6 +14,9 @@
                             List Of Posts
                         </div>
 
+                        <div class="mt-8 mb-8">
+                            <inertia-link :href="`/posts/create`" class="float-right bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Create New Post</inertia-link>
+                        </div>
                         <table class="shadow-lg bg-white w-full">
                             <tr>
                                 <th class="bg-gray-700 border text-left px-8 py-4">Title</th>
@@ -26,31 +29,33 @@
                                 <td class="border px-8 py-4"> {{ post.published_at }} </td>
                             </tr>
                         </table>
-                        <div>
+                        <!-- <div>
                             <paginator :paginator="posts" class="mt-3" />
-                        </div>
-                        <!-- <div class="mt-5">
-                            <pagination :links="posts.links"></pagination>
                         </div> -->
+                        <div class="mt-5">
+                            <pagination :links="posts.links"></pagination>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </app-layout>
 </template>
 
 <script>
-    import Paginator from "@/Components/Paginator";
+    // import Paginator from "@/Components/Paginator";
     import AppLayout from '@/Layouts/AppLayout'
-    // import Pagination from '../Shared/Pagination'
+    import Pagination from '../Shared/Pagination'
 
     export default {
-        props: ['posts'],
+        metaInfo: { title: 'Post' },
+        props: {
+            posts : Object
+        },
         components: {
             AppLayout,
-            // Pagination,
-            Paginator,
+            Pagination,
             
         },
     }

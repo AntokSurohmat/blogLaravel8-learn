@@ -7,6 +7,9 @@ use App\Models\Post;
 
 use Inertia\Inertia;
 
+use ProtoneMedia\LaravelQueryBuilderInertiaJs\InertiaTable;
+
+
 class PostController extends Controller
 {
     public function index(){
@@ -15,5 +18,7 @@ class PostController extends Controller
         ->paginate(10);
 
     return Inertia::render('Posts/Index', ['posts' => $posts]);
+
     }
+
 }
