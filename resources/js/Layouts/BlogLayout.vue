@@ -6,6 +6,7 @@
 
                 <nav>
                     <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
+                        <li><a class="hover:text-gray-200 hover:underline px-4" href="/dashboard">Dashboard</a></li>
                         <li><a class="hover:text-gray-200 hover:underline px-4" href="#">Shop</a></li>
                         <li><a class="hover:text-gray-200 hover:underline px-4" href="#">About</a></li>
                     </ul>
@@ -80,9 +81,30 @@
                     <p class="text-xl font-semibold pb-5">About Us</p>
                     <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
                     <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
-                        Get to know us
+                        Get to know us  
                     </a>
                 </div>
+                
+                <div class="w-full bg-white shadow flex flex-col my-4 p-6 text-center pb-5">
+                    <p class="text-xl font-semibold pb-5">Meta</p>
+                    <ul class="w-full mx-auto sm:grid grid-cols-2" v-if="!$page.props.user">
+                        <li class="nav-item active">
+                            <a class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-2 mr-1" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-2 ml-1" href="/register">Register</a>
+                        </li>
+                    </ul>
+                    <ul class="w-full mx-auto sm:grid grid-cols-2" v-if="$page.props.user">
+                        <li class="nav-item active">
+                            <a class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-2 mr-1"  href="/dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-item active">
+                            <inertia-link class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-2 ml-1" href="/logout" method="POST" as="button">Loguot</inertia-link>
+                        </li>
+                    </ul>
+                </div>
+
             </aside>
 
         </div>
@@ -99,5 +121,11 @@
             </div>
         </footer>
 
-    </div>
+    </div> 
 </template>
+<script>
+export default {
+
+   
+}
+</script>

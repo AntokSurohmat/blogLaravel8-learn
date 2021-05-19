@@ -20,6 +20,9 @@
                                 <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </jet-nav-link>
+                                <jet-nav-link :href="route('blog_posts')" :active="route().current('blog_posts')">
+                                    Blog
+                                </jet-nav-link>
                             </div>
                         </div>
 
@@ -99,6 +102,11 @@
                                     </template>
 
                                     <template #content>
+
+                                        <jet-dropdown-link :href="route('profile.show')">
+                                            Post
+                                        </jet-dropdown-link>
+
                                         <!-- Account Management -->
                                         <div class="block px-4 py-2 text-xs text-gray-400">
                                             Manage Account
